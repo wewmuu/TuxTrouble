@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Upperbop.png">
+	<!-- Created with Adobe Animate version 21.0.2.37893 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Upper Crowd Bob0000" x="0" y="0" width="2395" height="1021"/>
+	<SubTexture name="Upper Crowd Bob0001" x="0" y="0" width="2395" height="1021"/>
+	<SubTexture name="Upper Crowd Bob0002" x="0" y="1021" width="2395" height="1021"/>
+	<SubTexture name="Upper Crowd Bob0003" x="0" y="1021" width="2395" height="1021"/>
+	<SubTexture name="Upper Crowd Bob0004" x="0" y="2042" width="2395" height="1021"/>
+	<SubTexture name="Upper Crowd Bob0005" x="0" y="2042" width="2395" height="1021"/>
+	<SubTexture name="Upper Crowd Bob0006" x="0" y="3063" width="2395" height="1021"/>
+	<SubTexture name="Upper Crowd Bob0007" x="0" y="3063" width="2395" height="1021"/>
+	<SubTexture name="Upper Crowd Bob0008" x="0" y="3063" width="2395" height="1021"/>
+	<SubTexture name="Upper Crowd Bob0009" x="0" y="3063" width="2395" height="1021"/>
+	<SubTexture name="Upper Crowd Bob0010" x="0" y="3063" width="2395" height="1021"/>
+	<SubTexture name="Upper Crowd Bob0011" x="0" y="3063" width="2395" height="1021"/>
+	<SubTexture name="Upper Crowd Bob0012" x="0" y="3063" width="2395" height="1021"/>
+</TextureAtlas>

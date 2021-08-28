@@ -1,6 +1,10 @@
-:dad:You put up quite the fight there. Gonna be honest, I was not expecting that. 
-:bf:bap.
-:dad:You haven't won yet! this demon has a few more Spotify skips remaining.
-:dad:HEY! PUFFY!
-:dad:Load up "Cool Rap Beat 2", will ya?
-:bf:skop bop.
+left_flip:P_Beastie3:Ahem, may I have everybody’s attention, please? 
+left_flip:P_Beastie:Thank you. 
+left_flip:P_Beastie:We are gathered here today to celebrate someone who plays a very important role in all of our lives, whether it be big or small. 
+left_flip:P_Beastie4:I remember back in the high school cafeteria, he would always order those same french fries, feels just like yesterday. 
+left:P_Tux:... 
+right:P_Hexley:OH! You can’t forget about that time at the embarrassing Christmas party! Now THAT was funny, mate. 
+left:P_Gavroche:Heh. 
+left_flip:P_Beastie3:Will you two be quiet? I’m trying to have a moment here.
+left_flip:P_Beastie5:...
+left_flip:P_Beastie2:Ah, what the heck. LET’S PARTY!

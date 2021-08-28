@@ -1,0 +1,22 @@
+right_flip:P_BF3:Be..Beep?
+left:P_Gavroche2:Ow, that’s gotta hurt. 
+right:P_Hexley:Serves him right, no one messes with us!
+left:P_Gavroche2:Uh, sure. 
+right:P_Hexley:Now uh...
+right:P_Hexley2:What are we supposed to do again?
+left:P_Gavroche3:I think he wants us to sing to distract him.
+right:P_Hexley3:How’s that supposed to help?? 
+right:P_Hexley2:He’s just gonna walk away and find Beastie.
+left:P_Gavroche4:I don’t know.
+right:P_Hexley:Well okay, start singing, mate! 
+right:P_Hexley2:I’ll uh, guard him. 
+left:P_Gavroche:You ain’t getting off that easy, Hexley.
+right:P_Hexley4:FINE I’LL SING! 
+right:P_Hexley2:But don’t expect me to play fair. 
+left:P_Gavroche2:What?
+right:P_Hexley2:I’m gonna cheat, is what I’m saying. 
+left:P_Gavroche3:Oh. Ok. 
+right_flip:P_BF3:...
+right:P_Hexley:Watch out, mate. Don’t get jabbed! 
+
+

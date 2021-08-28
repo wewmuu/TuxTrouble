@@ -1,0 +1,6 @@
+highscore.txt
+./lescore.txt
+/etc/highscore.cfg
+.highscore
+highscore
+bozo

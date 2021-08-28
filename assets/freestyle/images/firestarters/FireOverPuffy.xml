@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="FireOverPuffy.png">
+	<!-- Created with Adobe Animate version 21.0.2.37893 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Puffy30000" x="0" y="0" width="639" height="376"/>
+	<SubTexture name="Puffy30001" x="639" y="0" width="639" height="376"/>
+	<SubTexture name="Puffy30002" x="1278" y="0" width="639" height="376"/>
+	<SubTexture name="Puffy30003" x="0" y="376" width="639" height="376"/>
+	<SubTexture name="Puffy30004" x="639" y="376" width="639" height="376"/>
+	<SubTexture name="Puffy30005" x="1278" y="376" width="639" height="376"/>
+	<SubTexture name="Puffy30006" x="0" y="752" width="639" height="376"/>
+	<SubTexture name="Puffy30007" x="639" y="752" width="639" height="376"/>
+	<SubTexture name="Puffy30008" x="1278" y="752" width="639" height="376"/>
+	<SubTexture name="Puffy30009" x="0" y="1128" width="639" height="376"/>
+</TextureAtlas>

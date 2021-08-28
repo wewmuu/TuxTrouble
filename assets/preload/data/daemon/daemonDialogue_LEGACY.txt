@@ -1,0 +1,6 @@
+left_flip:P_Beastie_old:You put up quite the fight there. Gonna be honest, I was not expecting that. 
+right_flip:P_BF:bap.
+left_flip:P_Beastie_old:You haven't won yet! this demon has a few more Spotify skips remaining.
+left_flip:P_Beastie_old:HEY! PUFFY!
+left_flip:P_Beastie_old:Load up "Cool Rap Beat 2", will ya?
+right_flip:P_BF:skop bop.

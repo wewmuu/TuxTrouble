@@ -1,0 +1,7 @@
+left_flip:P_Beastie_old:Gavroche, we've been over this multiple times, you're paying rent this month.
+right_flip:P_BF:beep!
+left_flip:P_Beastie_old:Oh wow, where did this speaker system come from?
+right_flip:P_BF3:BEEP!
+left_flip:P_Beastie_old:Oh right, you must be here to save Tux.
+left_flip:P_Beastie_old:Listen, I'd love to let him go, but he ate my french fries back in highschool and now he has to pay the price.
+right_flip:P_BF:bap.

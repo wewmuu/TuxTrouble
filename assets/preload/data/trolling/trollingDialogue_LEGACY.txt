@@ -1,0 +1,4 @@
+left_flip:P_Beastie_old:Alright, I'm tired.
+left_flip:P_Beastie_old:I'm losing my voice and I have a kart race in like half an hour, soooooooo...
+left_flip:P_Beastie_old:I think I'm just gonna cheat now, if that's cool with you? 
+right_flip:P_BF2:wop.

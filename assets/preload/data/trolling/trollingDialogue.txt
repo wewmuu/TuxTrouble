@@ -1,4 +1,11 @@
-:dad:Alright, I'm tired.
-:dad:I'm losing my voice and I have a kart race in like half an hour, soooooooo...
-:dad:I think I'm just gonna cheat now, if that's cool with you? 
-:bf:wop.
+right_flip:P_BF2:BEEP?!
+left_flip:P_Beastie3:What are you all so shocked about? 
+left_flip:P_Beastie:Oh, the cage? That’s nothing. That’s for me to worry about. 
+right_flip:P_BF2:BOP?????
+left:P_Tux2:Beastie, what’s the deal here?? I’m gettin’ really worried. 
+left_flip:P_Beastie3:You know what the deal is, fry muncher. 
+left_flip:P_Beastie4:You really think I’d host a birthday party for you?
+right_flip:P_BF2:BAAAAAAAAAAAP???
+left_flip:P_Beastie:I don’t have time to explain, but I’ll make you a deal.
+left_flip:P_Beastie2:You beat me in this rap battle and I’ll let Tux free, Capisce? 
+right_flip:P_BF3:Beep!

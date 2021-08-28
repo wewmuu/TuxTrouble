@@ -18,22 +18,22 @@ import haxe.io.Path;
 class LoadingState extends MusicBeatState
 {
 	inline static var MIN_TIME = 1.0;
-	
+
 	var target:FlxState;
 	var stopMusic = false;
 	var callbacks:MultiCallback;
-	
+
 	var logo:FlxSprite;
 	var gfDance:FlxSprite;
 	var danceLeft = false;
-	
+
 	function new(target:FlxState, stopMusic:Bool)
 	{
 		super();
 		this.target = target;
 		this.stopMusic = stopMusic;
 	}
-	
+
 	override function create()
 	{
 		logo = new FlxSprite(-150, -100);
@@ -50,9 +50,10 @@ class LoadingState extends MusicBeatState
 		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		gfDance.antialiasing = true;
+		gfDance.animation.play('danceRight');
 		add(gfDance);
 		add(logo);
-		
+
 		initSongsManifest().onComplete
 		(
 			function (lib)
@@ -63,23 +64,22 @@ class LoadingState extends MusicBeatState
 				if (PlayState.SONG.needsVoices)
 					checkLoadSong(getVocalPath());
 				checkLibrary("shared");
-				if (PlayState.storyWeek > 0)
-				{
-				    if (PlayState.storyWeek == 7)
-	                    checkLibrary("mansion");
-                    else 
-					    checkLibrary("week" + PlayState.storyWeek);
-				}
-				else
-					checkLibrary("tutorial");
-				
+
+				// We removed vanilla weeks, this block is useless now
+				if (PlayState.storyWeek == 1 || PlayState.storyWeek == 0)
+	      	checkLibrary("mansion");
+        else if (PlayState.storyWeek == 2)
+					checkLibrary("hell");
+				else if (PlayState.storyWeek == 3)
+					checkLibrary("freestyle");
+
 				var fadeTime = 0.5;
 				FlxG.camera.fade(FlxG.camera.bgColor, fadeTime, true);
 				new FlxTimer().start(fadeTime + MIN_TIME, function(_) introComplete());
 			}
 		);
 	}
-	
+
 	function checkLoadSong(path:String)
 	{
 		if (!Assets.cache.hasSound(path))
@@ -94,105 +94,128 @@ class LoadingState extends MusicBeatState
 			Assets.loadSound(path).onComplete(function (_) { callback(); });
 		}
 	}
-	
+
 	function checkLibrary(library:String)
 	{
+		trace(library);
 		trace(Assets.hasLibrary(library));
 		if (Assets.getLibrary(library) == null)
 		{
 			@:privateAccess
 			if (!LimeAssets.libraryPaths.exists(library))
 				throw "Missing library: " + library;
-			
+
 			var callback = callbacks.add("library:" + library);
 			Assets.loadLibrary(library).onComplete(function (_) { callback(); });
 		}
 	}
-	
+
 	override function beatHit()
 	{
 		super.beatHit();
-		
+
 		logo.animation.play('bump');
 		danceLeft = !danceLeft;
-		
+
 		if (danceLeft)
 			gfDance.animation.play('danceRight');
 		else
 			gfDance.animation.play('danceLeft');
 	}
-	
+
+
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		/*if (gfDance != null && logo != null)
+		{
+			if(logo.animation.curAnim.finished)
+				logo.animation.play('bump');
+
+			if (gfDance.animation.curAnim.name == 'danceLeft' && gfDance.animation.curAnim.finished)
+				gfDance.animation.play('danceRight');
+			else if (gfDance.animation.curAnim.name == 'danceRight' && gfDance.animation.curAnim.finished)
+				gfDance.animation.play('danceLeft');
+		}
+		*/
+
+		if (FlxG.sound.music != null)
+			Conductor.songPosition = FlxG.sound.music.time;
+
 		#if debug
 		if (FlxG.keys.justPressed.SPACE)
 			trace('fired: ' + callbacks.getFired() + " unfired:" + callbacks.getUnfired());
 		#end
 	}
-	
+
 	function onLoad()
 	{
 		if (stopMusic && FlxG.sound.music != null)
 			FlxG.sound.music.stop();
-		
+
 		FlxG.switchState(target);
 	}
-	
+
 	static function getSongPath()
 	{
 		return Paths.inst(PlayState.SONG.song);
 	}
-	
+
 	static function getVocalPath()
 	{
 		return Paths.voices(PlayState.SONG.song);
 	}
-	
+
 	inline static public function loadAndSwitchState(target:FlxState, stopMusic = false)
 	{
 		FlxG.switchState(getNextState(target, stopMusic));
 	}
-	
+
 	static function getNextState(target:FlxState, stopMusic = false):FlxState
 	{
-	  if (PlayState.storyWeek == 7)
-	      Paths.setCurrentLevel("mansion");
-      else
-		Paths.setCurrentLevel("week" + PlayState.storyWeek);
+		// Vanilla weeks are gone
+	  if (PlayState.storyWeek == 1 || PlayState.storyWeek == 0)
+	    Paths.setCurrentLevel("mansion");
+    else if (PlayState.storyWeek == 2)
+			Paths.setCurrentLevel("hell");
+		else if (PlayState.storyWeek == 3)
+			Paths.setCurrentLevel("freestyle");
+
+
 		#if NO_PRELOAD_ALL
 		var loaded = isSoundLoaded(getSongPath())
 			&& (!PlayState.SONG.needsVoices || isSoundLoaded(getVocalPath()))
 			&& isLibraryLoaded("shared");
-		
+
 		if (!loaded)
 			return new LoadingState(target, stopMusic);
 		#end
 		if (stopMusic && FlxG.sound.music != null)
 			FlxG.sound.music.stop();
-		
+
 		return target;
 	}
-	
+
 	#if NO_PRELOAD_ALL
 	static function isSoundLoaded(path:String):Bool
 	{
 		return Assets.cache.hasSound(path);
 	}
-	
+
 	static function isLibraryLoaded(library:String):Bool
 	{
 		return Assets.getLibrary(library) != null;
 	}
 	#end
-	
+
 	override function destroy()
 	{
 		super.destroy();
-		
+
 		callbacks = null;
 	}
-	
+
 	static function initSongsManifest()
 	{
 		var id = "songs";
@@ -266,16 +289,16 @@ class MultiCallback
 	public var logId:String = null;
 	public var length(default, null) = 0;
 	public var numRemaining(default, null) = 0;
-	
+
 	var unfired = new Map<String, Void->Void>();
 	var fired = new Array<String>();
-	
+
 	public function new (callback:Void->Void, logId:String = null)
 	{
 		this.callback = callback;
 		this.logId = logId;
 	}
-	
+
 	public function add(id = "untitled")
 	{
 		id = '$length:$id';
@@ -289,10 +312,10 @@ class MultiCallback
 				unfired.remove(id);
 				fired.push(id);
 				numRemaining--;
-				
+
 				if (logId != null)
 					log('fired $id, $numRemaining remaining');
-				
+
 				if (numRemaining == 0)
 				{
 					if (logId != null)
@@ -306,13 +329,13 @@ class MultiCallback
 		unfired[id] = func;
 		return func;
 	}
-	
+
 	inline function log(msg):Void
 	{
 		if (logId != null)
 			trace('$logId: $msg');
 	}
-	
+
 	public function getFired() return fired.copy();
 	public function getUnfired() return [for (id in unfired.keys()) id];
 }

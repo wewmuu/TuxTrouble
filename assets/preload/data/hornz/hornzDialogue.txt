@@ -1,7 +1,12 @@
-:dad:Gavroche, we've been over this multiple times, you're paying rent this month.
-:bf:beep! 
-:dad:Oh wow, where did this speaker system come from? 
-:bf:BEEP!
-:dad:Oh right, you must be here to save Tux.
-:dad:Listen, I'd love to let him go, but he ate my french fries back in highschool and now he has to pay the price.   
-:bf:bap. 
+left_flip:P_Beastie2:Ah! Look who’s arrived!
+left_flip:P_Beastie:Early as well. 
+right_flip:P_BF3:Beep.
+left_flip:P_Beastie:Welcome to Ravenbridge Mansion.
+left_flip:P_Beastie:Thanks for coming on such short notice you two, I really needed a replacement musician for this party after what happened with Audacity Girl.
+right_flip:P_BF2:Bop?
+left_flip:P_Beastie3:Nevermind that, there’s more important matters to deal with. 
+left_flip:P_Beastie:As you can tell, the guests haven’t arrived yet and I’ve barely even started decorating, so we still have quite a bit of time left until Tux’s birthday party. 
+right_flip:P_BF:Bap.
+left_flip:P_Beastie:If you want, we can run a little practice song before everyone gets here. Loosen up those vocal cords a bit, y’know? 
+right_flip:P_BF3:Beep!
+left_flip:P_Beastie4:Alright! Somebody lay down a beat!

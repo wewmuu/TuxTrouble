@@ -1,0 +1,11 @@
+left:P_Gavroche4:How are you gonna cheat that hard and STILL make us lose?
+right:P_Hexley4:ME? YOU BARELY EVEN TRIED! 
+left:P_Gavroche4:Don’t start with that, all you did was copy me. 
+right:P_Hexley2:Mate, you gotta be kidding me. 
+left:P_Gavroche2:Ugh.
+left:P_Gnu:Boyfriend, I saw Beastie go that way with Tux. 
+left:P_Gnu:Just up those stairs, I think he’s on the balcony. 
+right_flip:P_BF3:Beep! 
+
+
+

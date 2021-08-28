@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="URGAYLOL.png">
+	<!-- Created with Adobe Animate version 21.0.2.37893 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Puffy0000" x="0" y="0" width="1204" height="665"/>
+	<SubTexture name="Puffy0001" x="0" y="0" width="1204" height="665"/>
+	<SubTexture name="Puffy0002" x="1204" y="0" width="1204" height="665"/>
+	<SubTexture name="Puffy0003" x="1204" y="0" width="1204" height="665"/>
+	<SubTexture name="Puffy0004" x="2408" y="0" width="1204" height="665"/>
+	<SubTexture name="Puffy0005" x="2408" y="0" width="1204" height="665"/>
+	<SubTexture name="Puffy0006" x="0" y="665" width="1204" height="665"/>
+	<SubTexture name="Puffy0007" x="0" y="665" width="1204" height="665"/>
+	<SubTexture name="Puffy0008" x="0" y="665" width="1204" height="665"/>
+	<SubTexture name="Puffy0009" x="0" y="665" width="1204" height="665"/>
+	<SubTexture name="Puffy0010" x="0" y="665" width="1204" height="665"/>
+	<SubTexture name="Puffy0011" x="0" y="665" width="1204" height="665"/>
+	<SubTexture name="Puffy0012" x="0" y="665" width="1204" height="665"/>
+	<SubTexture name="Puffy0013" x="0" y="665" width="1204" height="665"/>
+</TextureAtlas>

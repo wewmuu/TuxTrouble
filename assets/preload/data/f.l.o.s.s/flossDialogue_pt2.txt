@@ -1,0 +1,18 @@
+right_flip:P_BF3:Beep!
+left_flip:P_Bsuit3:Oh great, you’re here. 
+left_flip:P_Bsuit:Guess Gavroche and Hexley didn’t do a very good job distracting you. 
+right_flip:P_BF3:Bop!
+left_flip:P_Bsuit2:To tell ya the truth, this is really just my revenge. 
+left_flip:P_Bsuit4:This guy’s been stealing my fries since high school! He had it coming. 
+left:P_Tux4:IS THAT REALLY WHAT THIS IS ABOUT? DUDE I’LL PAY YOU BACK JUST LET ME DOWN!
+left_flip:P_Bsuit2:What? Still can’t hear ya bud. 
+right_flip:P_BF3:BAP!
+left_flip:P_Bsuit3:Alright fine, if you wanna have a fair fight, I’ll give you a fair fight. 
+left_flip:P_Bsuit:If you win, I’ll let Tux free and we can forget about all of this.
+left_flip:P_Bsuit2:IF I WIN, Tux stays here as my personal fry cook for the rest of his life. 
+right_flip:P_BF2:?????
+left_flip:P_Bsuit:Enough talk, let’s get into this rap. 
+left_flip:P_Bsuit2:Puffy, throw my swag on!
+right:P_Puffy:You got it, boss. 
+right_flip:P_BF:Swag. 
+

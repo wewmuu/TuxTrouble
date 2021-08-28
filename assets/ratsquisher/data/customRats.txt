@@ -1,0 +1,2 @@
+RAT FOLDER NAME  --  customSound/ogSound
+exe--customSound

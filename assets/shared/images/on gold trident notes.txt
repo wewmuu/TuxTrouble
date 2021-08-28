@@ -1,0 +1,1 @@
+Gold trident note sustains are bugged sorry lol I did my best with it but I don't know the game's engine well enough. It might be kade's new input causing it, or just the speed of some charts or framerates or people just being people idk. Just don't use them without knowing I warned you. We had to scrap em from the base game, but the code is still there doing fuck all.

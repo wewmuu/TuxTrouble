@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="upperBop.png">
+	<!-- Created with Adobe Animate version 21.0.2.37893 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Upper Crowd Bob0000" x="0" y="0" width="2312" height="1258" frameX="0" frameY="0" frameWidth="2312" frameHeight="1259"/>
+	<SubTexture name="Upper Crowd Bob0001" x="2312" y="0" width="2312" height="1258" frameX="0" frameY="0" frameWidth="2312" frameHeight="1259"/>
+	<SubTexture name="Upper Crowd Bob0002" x="4624" y="0" width="2289" height="1258" frameX="0" frameY="0" frameWidth="2312" frameHeight="1259"/>
+	<SubTexture name="Upper Crowd Bob0003" x="0" y="1258" width="2289" height="1258" frameX="0" frameY="0" frameWidth="2312" frameHeight="1259"/>
+	<SubTexture name="Upper Crowd Bob0004" x="2289" y="1258" width="2288" height="1258" frameX="0" frameY="0" frameWidth="2312" frameHeight="1259"/>
+	<SubTexture name="Upper Crowd Bob0005" x="4577" y="1258" width="2288" height="1258" frameX="0" frameY="0" frameWidth="2312" frameHeight="1259"/>
+	<SubTexture name="Upper Crowd Bob0006" x="0" y="2516" width="2286" height="1259" frameX="0" frameY="0" frameWidth="2312" frameHeight="1259"/>
+	<SubTexture name="Upper Crowd Bob0007" x="2286" y="2516" width="2286" height="1259" frameX="0" frameY="0" frameWidth="2312" frameHeight="1259"/>
+	<SubTexture name="Upper Crowd Bob0008" x="4572" y="2516" width="2286" height="1259" frameX="0" frameY="0" frameWidth="2312" frameHeight="1259"/>
+	<SubTexture name="Upper Crowd Bob0009" x="0" y="3775" width="2286" height="1259" frameX="0" frameY="0" frameWidth="2312" frameHeight="1259"/>
+	<SubTexture name="Upper Crowd Bob0010" x="2286" y="3775" width="2286" height="1259" frameX="0" frameY="0" frameWidth="2312" frameHeight="1259"/>
+	<SubTexture name="Upper Crowd Bob0011" x="4572" y="3775" width="2286" height="1259" frameX="0" frameY="0" frameWidth="2312" frameHeight="1259"/>
+	<SubTexture name="Upper Crowd Bob0012" x="0" y="5034" width="2286" height="1259" frameX="0" frameY="0" frameWidth="2312" frameHeight="1259"/>
+</TextureAtlas>

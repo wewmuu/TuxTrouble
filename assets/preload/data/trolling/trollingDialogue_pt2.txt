@@ -1,0 +1,16 @@
+left_flip:P_Beastie3:Wow, you didn’t even try there. 
+left_flip:P_Beastie:Welp, looks like I win, and now you gotta abide by my rules.
+right_flip:P_BF:Beep?
+left:P_Blank:*Beastie pulls out a hammer*
+left_flip:P_Beastie:Haven’t had to use this baby in years. 
+right_flip:P_BF2:???????????
+left_flip:P_Beastie2:It was nice funking with you, Boyfriend.
+left_flip:P_Beastie4:But it looks like you couldn’t handle the heat. 
+left_flip:P_Beastie2:Ta-ta! Distract him for me boys!
+right:P_Hexley2:Do we really have to?
+left:P_Gavroche4:Quit whining, you literally don’t pay rent here. 
+left:P_Gavroche4:The least you could do is help. 
+right:P_Hexley4:WHEN’S THE LAST TIME YOU PAID RENT?
+left:P_Gavroche2:Uhh... 
+right:P_Hexley2:Whatever. Do your thing, mate.
+

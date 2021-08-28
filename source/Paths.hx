@@ -55,6 +55,16 @@ class Paths
 		return getPath(file, type, library);
 	}
 
+	inline static public function lua(key:String,?library:String)
+	{
+		return getPath('data/$key.lua', TEXT, library);
+	}
+
+	inline static public function luaImage(key:String, ?library:String)
+	{
+		return getPath('data/$key.png', IMAGE, library);
+	}
+
 	inline static public function txt(key:String, ?library:String)
 	{
 		return getPath('data/$key.txt', TEXT, library);
@@ -64,6 +74,15 @@ class Paths
 	{
 		return getPath('data/$key.xml', TEXT, library);
 	}
+
+
+	// Video cutscene shit
+	// Very hacky, like the rest of this. I hate it.
+	inline static public function webm(key:String, ?library:String)
+	{
+		return getPath('videos/$key.webm', MOVIE_CLIP, library);
+	}
+
 
 	inline static public function json(key:String, ?library:String)
 	{
@@ -80,6 +99,12 @@ class Paths
 		return sound(key + FlxG.random.int(min, max), library);
 	}
 
+	inline static public function video(key:String, ?library:String)
+	{
+		trace('assets/videos/$key.mp4');
+		return getPath('videos/$key.mp4', BINARY, library);
+	}
+
 	inline static public function music(key:String, ?library:String)
 	{
 		return getPath('music/$key.$SOUND_EXT', MUSIC, library);
@@ -87,17 +112,32 @@ class Paths
 
 	inline static public function voices(song:String)
 	{
-		return 'songs:assets/songs/${song.toLowerCase()}/Voices.$SOUND_EXT';
+		var songLowercase = StringTools.replace(song, " ", "-").toLowerCase();
+			switch (songLowercase) {
+				case 'dad-battle': songLowercase = 'dadbattle';
+				case 'philly-nice': songLowercase = 'philly';
+			}
+		return 'songs:assets/songs/${songLowercase}/Voices.$SOUND_EXT';
 	}
 
 	inline static public function inst(song:String)
 	{
-		return 'songs:assets/songs/${song.toLowerCase()}/Inst.$SOUND_EXT';
+		var songLowercase = StringTools.replace(song, " ", "-").toLowerCase();
+			switch (songLowercase) {
+				case 'dad-battle': songLowercase = 'dadbattle';
+				case 'philly-nice': songLowercase = 'philly';
+			}
+		return 'songs:assets/songs/${songLowercase}/Inst.$SOUND_EXT';
 	}
 
 	inline static public function image(key:String, ?library:String)
 	{
 		return getPath('images/$key.png', IMAGE, library);
+	}
+
+	inline static public function imagejpg(key:String, ?library:String)
+	{
+		return getPath('images/$key.jpg', IMAGE, library);
 	}
 
 	inline static public function font(key:String)

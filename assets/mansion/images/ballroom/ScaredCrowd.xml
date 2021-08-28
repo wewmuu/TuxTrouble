@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="ScaredCrowd.png">
+	<!-- Created with Adobe Animate version 21.0.2.37893 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Scared_Larpers0000" x="0" y="0" width="556" height="605"/>
+	<SubTexture name="Scared_Larpers0001" x="0" y="0" width="556" height="605"/>
+	<SubTexture name="Scared_Larpers0002" x="556" y="0" width="556" height="605"/>
+	<SubTexture name="Scared_Larpers0003" x="556" y="0" width="556" height="605"/>
+	<SubTexture name="Scared_Larpers0004" x="1112" y="0" width="556" height="605"/>
+	<SubTexture name="Scared_Larpers0005" x="1112" y="0" width="556" height="605"/>
+	<SubTexture name="Scared_Larpers0006" x="0" y="605" width="556" height="605"/>
+	<SubTexture name="Scared_Larpers0007" x="0" y="605" width="556" height="605"/>
+	<SubTexture name="Scared_Larpers0008" x="0" y="605" width="556" height="605"/>
+	<SubTexture name="Scared_Larpers0009" x="0" y="605" width="556" height="605"/>
+	<SubTexture name="Scared_Larpers0010" x="0" y="605" width="556" height="605"/>
+	<SubTexture name="Scared_Larpers0011" x="0" y="605" width="556" height="605"/>
+	<SubTexture name="Scared_Larpers0012" x="0" y="605" width="556" height="605"/>
+	<SubTexture name="Scared_Larpers0013" x="0" y="605" width="556" height="605"/>
+</TextureAtlas>

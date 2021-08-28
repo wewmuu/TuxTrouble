@@ -1,9 +1,8 @@
 package;
 
-#if desktop
+#if windows
 import Discord.DiscordClient;
 #end
-
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import openfl.Lib;
@@ -71,7 +70,7 @@ class MusicBeatState extends FlxUIState
 			else
 				skippedFrames++;
 
-		if ((cast (Lib.current.getChildAt(0), Main)).getFPSCap != FlxG.save.data.fpsCap)
+		if ((cast (Lib.current.getChildAt(0), Main)).getFPSCap != FlxG.save.data.fpsCap && FlxG.save.data.fpsCap <= 290)
 			(cast (Lib.current.getChildAt(0), Main)).setFPSCap(FlxG.save.data.fpsCap);
 
 		super.update(elapsed);
@@ -111,5 +110,14 @@ class MusicBeatState extends FlxUIState
 	public function beatHit():Void
 	{
 		//do literally nothing dumbass
+	}
+
+	public function fancyOpenURL(schmancy:String)
+	{
+		#if linux
+		Sys.command('/usr/bin/xdg-open', [schmancy, "&"]);
+		#else
+		FlxG.openURL(schmancy);
+		#end
 	}
 }

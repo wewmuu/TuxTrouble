@@ -13,7 +13,7 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.net.curl.CURLCode;
 
-#if desktop
+#if windows
 import Discord.DiscordClient;
 #end
 
@@ -21,11 +21,18 @@ using StringTools;
 
 class StoryMenuState extends MusicBeatState
 {
+
+	#if !DEMOBUILD
+	public static var isDemoBuild = false;
+	#else
+	public static var isDemoBuild = true;
+	#end
+
 	var scoreText:FlxText;
 
 	var weekData:Array<Dynamic> = [
-		['Tutorial-Remix'],
-		['Hornz', 'Daemon', 'Trolling', 'Floss']
+		['Tutorial Remix'],
+		['Hornz', 'Daemon', 'Trolling', 'Troublemakers', 'F.L.O.S.S']
 	];
 	var curDifficulty:Int = 1;
 
@@ -47,7 +54,7 @@ class StoryMenuState extends MusicBeatState
 
 	var txtTracklist:FlxText;
 
-	var grpWeekText:FlxTypedGroup<MenuItem>;
+	var grpWeekText:FlxTypedGroup<StoryMenuItem>;
 	var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
 
 	var grpLocks:FlxTypedGroup<FlxSprite>;
@@ -59,9 +66,9 @@ class StoryMenuState extends MusicBeatState
 
 	override function create()
 	{
-		#if desktop
+		#if windows
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
+		DiscordClient.changePresence("In the Story Mode Menu", null);
 		#end
 
 		transIn = FlxTransitionableState.defaultTransIn;
@@ -91,7 +98,7 @@ class StoryMenuState extends MusicBeatState
 		var ui_tex = Paths.getSparrowAtlas('campaign_menu_UI_assets');
 		var yellowBG:FlxSprite = new FlxSprite(0, 56).makeGraphic(FlxG.width, 400, 0xFFF9CF51);
 
-		grpWeekText = new FlxTypedGroup<MenuItem>();
+		grpWeekText = new FlxTypedGroup<StoryMenuItem>();
 		add(grpWeekText);
 
 		var blackBarThingie:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, 56, FlxColor.BLACK);
@@ -106,7 +113,7 @@ class StoryMenuState extends MusicBeatState
 
 		for (i in 0...weekData.length)
 		{
-			var weekThing:MenuItem = new MenuItem(0, yellowBG.y + yellowBG.height + 10, i);
+			var weekThing:StoryMenuItem = new StoryMenuItem(0, yellowBG.y + yellowBG.height + 10, i);
 			weekThing.y += ((weekThing.height + 20) * i);
 			weekThing.targetY = i;
 			grpWeekText.add(weekThing);
@@ -270,24 +277,42 @@ class StoryMenuState extends MusicBeatState
 			PlayState.isStoryMode = true;
 			selectedWeek = true;
 
-			var diffic = "";
-
-			switch (curDifficulty)
-			{
-				case 0:
-					diffic = '-easy';
-				case 2:
-					diffic = '-hard';
-			}
 
 			PlayState.storyDifficulty = curDifficulty;
 
-			PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
+			// adjusting the song name to be compatible
+			var songFormat = StringTools.replace(PlayState.storyPlaylist[0], " ", "-");
+			switch (songFormat) {
+				case 'Dad-Battle': songFormat = 'Dadbattle';
+				case 'Philly-Nice': songFormat = 'Philly';
+			}
+
+			var poop:String = Highscore.formatSong(songFormat, curDifficulty);
+			PlayState.sicks = 0;
+			PlayState.bads = 0;
+			PlayState.shits = 0;
+			PlayState.goods = 0;
+			PlayState.campaignMisses = 0;
+			PlayState.SONG = Song.loadFromJson(poop, PlayState.storyPlaylist[0]);
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
-				LoadingState.loadAndSwitchState(new PlayState(), true);
+				// Video cutscene shit changed
+				//FlxG.switchState(new VideoState('assets/videos/hornz.webm', new PlayState()));
+				//LoadingState.loadAndSwitchState(new PlayState(), true);
+
+				// I'm using a hacky fix for now for tacking what songs open with cutscenes
+
+				if (PlayState.SONG.song.toLowerCase() == 'hornz' && !isDemoBuild) {
+					LoadingState.loadAndSwitchState(new VideoState(Paths.webm(PlayState.SONG.song.toLowerCase()), new PlayState()), true);
+					trace('The cutscene webm exists! Move to VideoState');
+				}else{
+					LoadingState.loadAndSwitchState(new PlayState(), true);
+					trace('No video cutscene, move to PlayState');
+				}
+
+
 			});
 		}
 	}
@@ -369,18 +394,15 @@ class StoryMenuState extends MusicBeatState
 
 		for (i in stringThing)
 		{
-			if (i == 'Trolling')
-			{
-				txtTracklist.text += "\n" + 'Floss';
-			}
-			else{
+			if (i == 'Trolling' && FlxG.save.data.trollingHide){
+				trace('No spoilers for you'); // Hide trolling from tracklist
+			}else{
 				txtTracklist.text += "\n" + i;
 			}
-			if (i == 'Tutorial-Remix') // Too lazy to fix this not showing up the right way
-			{
-				txtTracklist.text += "\n" + 'Tutorial Remix'; // At least it gives me a chance to rename it
-			}
 		}
+
+		// Bugfix from upstream
+		txtTracklist.text += "\n";
 
 		txtTracklist.text = txtTracklist.text.toUpperCase();
 

@@ -1,0 +1,13 @@
+beastie@daemonpc:~ %--tcsh--freebsd
+gnu@hurd:~/$--bash--gnu
+root@tux_desktop:/home/tux#--bash--gnu
+puffysthinkpad$--ksh--openbsd
+konqi@kde-neon:~$--bash--gnu
+PureDarwin:~ hexley$--bash--mac
+hexley@MacBook-Air ~ %--zsh--mac
+android@nexus / $--ash--busybox
+$--dash--gnu
+soyjak@soyworld ~>--fish--gnu
+[btw@iusearch ~]$--bash--gnu
+bash-3.2$--bash--gnu
+sh-3.2$--sh--gnu

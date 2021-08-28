@@ -1,0 +1,7 @@
+left_flip:P_Bsuit_old:Wow, you didn't even try there. 
+left_flip:P_Bsuit_old:Guess I win. Tux can chill here and you fellas can head home now! 
+left_flip:P_Bsuit_old:Come back to Ravenbridge mansion whenever you want! :))
+right_flip:P_BF3:BEEP!
+left_flip:P_Bsuit_old:FINE! If you want a fair fight, I'll give you a fair fight. 
+left_flip:P_Bsuit_old:Boys, get my swag on. 
+right_flip:P_BF:swag.

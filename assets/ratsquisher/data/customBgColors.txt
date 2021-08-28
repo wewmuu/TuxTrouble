@@ -1,0 +1,13 @@
+COLOR  --  COMMENT/NAME
+#9799a5--silver
+#ffa600--cheese
+#ec8b9a--pink
+#f05133--red box dimension
+#d2691e--cinnamon
+#ffd200--minion
+#228b22--ogre mutt
+#87ceeb--apologize to sky
+#006994--blue
+#4b0082--indigo
+#967bb6--lavender
+#b00b69--funny (fuck you frarly)

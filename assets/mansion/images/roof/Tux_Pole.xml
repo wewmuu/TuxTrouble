@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="GayLord_Sprites.png">
+	<!-- Created with Adobe Animate version 21.0.2.37893 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="gaylord0000" x="0" y="0" width="277" height="909"/>
+	<SubTexture name="gaylord0001" x="277" y="0" width="277" height="909"/>
+	<SubTexture name="gaylord0002" x="554" y="0" width="277" height="909"/>
+	<SubTexture name="gaylord0003" x="831" y="0" width="277" height="909"/>
+	<SubTexture name="gaylord0004" x="1108" y="0" width="277" height="909"/>
+	<SubTexture name="gaylord0005" x="1385" y="0" width="277" height="909"/>
+	<SubTexture name="gaylord0006" x="1662" y="0" width="277" height="909"/>
+	<SubTexture name="gaylord0007" x="0" y="909" width="277" height="909"/>
+	<SubTexture name="gaylord0008" x="277" y="0" width="277" height="909"/>
+	<SubTexture name="gaylord0009" x="277" y="909" width="277" height="909"/>
+	<SubTexture name="gaylord0010" x="831" y="0" width="277" height="909"/>
+	<SubTexture name="gaylord0011" x="554" y="909" width="277" height="909"/>
+	<SubTexture name="gaylord0012" x="1385" y="0" width="277" height="909"/>
+	<SubTexture name="gaylord0013" x="831" y="909" width="277" height="909"/>
+</TextureAtlas>

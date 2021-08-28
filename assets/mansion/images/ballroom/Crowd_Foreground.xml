@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Crowd_Front.png">
+	<!-- Created with Adobe Animate version 21.0.2.37893 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Crowd_Front0000" x="0" y="0" width="1113" height="256"/>
+	<SubTexture name="Crowd_Front0001" x="0" y="0" width="1113" height="256"/>
+	<SubTexture name="Crowd_Front0002" x="0" y="256" width="1113" height="256"/>
+	<SubTexture name="Crowd_Front0003" x="0" y="256" width="1113" height="256"/>
+	<SubTexture name="Crowd_Front0004" x="0" y="512" width="1113" height="256"/>
+	<SubTexture name="Crowd_Front0005" x="0" y="512" width="1113" height="256"/>
+	<SubTexture name="Crowd_Front0006" x="0" y="768" width="1113" height="256"/>
+	<SubTexture name="Crowd_Front0007" x="0" y="768" width="1113" height="256"/>
+	<SubTexture name="Crowd_Front0008" x="0" y="768" width="1113" height="256"/>
+	<SubTexture name="Crowd_Front0009" x="0" y="768" width="1113" height="256"/>
+	<SubTexture name="Crowd_Front0010" x="0" y="768" width="1113" height="256"/>
+	<SubTexture name="Crowd_Front0011" x="0" y="768" width="1113" height="256"/>
+	<SubTexture name="Crowd_Front0012" x="0" y="768" width="1113" height="256"/>
+	<SubTexture name="Crowd_Front0013" x="0" y="768" width="1113" height="256"/>
+</TextureAtlas>

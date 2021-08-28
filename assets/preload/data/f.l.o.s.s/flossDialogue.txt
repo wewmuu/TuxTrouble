@@ -1,0 +1,8 @@
+left_flip:P_Bsuit:Ah, isn’t it nice up here? 
+left_flip:P_Bsuit2:Just you, me, Puffy, and my swag. 
+left:P_Tux3:GET ME DOWN FROM HERE! YOU KNOW I HATE HEIGHTS!
+left_flip:P_Bsuit:What’s that? I can’t hear you!
+
+
+
+
