@@ -7,4 +7,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - EVERYTHING FUCKING CHANGED REPLAY THE MOD
 - FIXED HORNZ - DAEMON CUTSCENE WEBM
 - RECHARTED FLAME WAR
+- FIXED EXORCISM NORMAL AND EASY
 - PS: There will likely be no more updates trol.
