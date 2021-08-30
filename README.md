@@ -50,8 +50,6 @@ If you're looking for documentation, changelogs, or guides, you can find those o
 
 # Engine Features
 
- - **Bad Input System**
-	 - A shitty KE 1.5.3 input system that people started complaining about literally two weeks before the mod came out so there was no time to downgrade to 1.4.2 or port up the 1.4.2 input. It probably wont get an offcial fix unless the extremely unlikely conditon is met that we want to do another content update. (but to be fair, have you guys even tried messing with the settings to fix this? Im a shitty programmer, not a rythym game enthusiast or fnf fan, but there has to be a setting in KE 1.5.3 that at least makes the input drop bearable?)
  - **Dialouge that does not replay every time you die or restart**
 	 - You do, however, have the option to re-read the dialouge in the pause menu.
  - **Replays can be deleted from the in-game menu** (only tested on windows)
@@ -61,6 +59,8 @@ If you're looking for documentation, changelogs, or guides, you can find those o
 	 - You are now required to hold shift to change the per-song offset from the pause menu. No more annoying bullshit there.
  - **Toggle-able Discord Prescense**
 	 - Discord RPC can be toggled from the Misc options category without needing to mess with you Discord settings!
+ - **Bad Input System**
+	 - A shitty KE 1.5.3 input system that people started complaining about literally two weeks before the mod came out so there was no time to downgrade to 1.4.2 or port up the 1.4.2 input. It probably wont get an offcial fix unless the extremely unlikely conditon is met that we want to do another content update. (but to be fair, have you guys even tried messing with the settings to fix this? Im a shitty programmer, not a rythym game enthusiast or fnf fan, but there has to be a setting in KE 1.5.3 that at least makes the input drop bearable?)
 
 # Credits
 ### Friday Night Funkin'
