@@ -2,6 +2,9 @@
 ![Kade Engine logo](assets/preload/images/KadeEngineLogo.png)
 
 # Friday Night Funkin': Tux Trouble Remastered
+# Fixes That Will Likely Never Release Branch
+(this is not the source of the currently released version of the mod. It is slightly different and contains fixes to bugs that we're found post-release or that we forgot to fix for 2.1. They are unlikely to ever release.)
+(No this does not include fixes for the fuckery that is KE 1.5.3. Sorry guys, I really don't want to leave you hanging but I also no longer want to develop this mod, none of us do, and frankly The safe frames and offest settings are right there to help at least lessen the blow of the dropped inputs. Trust me, I really sat down and tried to find a way to fix this without completely porting to a new version. No dice.)
 ## Friday Night Funkin'
 **Friday Night Funkin'** is a rhythm game originally made for Ludum Dare 47 "Stuck In a Loop".
 
