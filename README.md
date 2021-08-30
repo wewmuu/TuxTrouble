@@ -84,3 +84,4 @@ This game was made with love to Newgrounds and its community. Extra love to Tom 
 
 # Building
 - Building instructions should be the exact same as those for KE 1.5.3. We haven't added any dependencies over what Kade already had.
+- if your build has missing sprites, check the filename of that sprite. Specifically, check the extension. For some reason there are sprites that had their extension capitolized and FNF's path system HATES this. I fixed some obvious ones in the gallery that I found, but there could easily be more.
