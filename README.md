@@ -28,7 +28,7 @@ If you're looking for documentation, changelogs, or guides, you can find those o
  - **Better-looking Freeplay**
 	 - Actually tweens in a way that makes sense instead of awkwardly moving into place from the top. Character portraits instead of health icons. Difficulty locking for songs only charted as hard. Webm previews of the stage.
  - **Cutscenes**
-	 - We are proud of this mod and of it's fanart, so we have a in-game gallery (that totally wasn't done a day before the mod came out) that showcases development images and other neat things.
+	 - Webm cutscenes between a few story week songs (mp4 did not work full-screen. We saw this as an issue and ditched it before release, thanks cam for catching that by being a fullscreen weirdo.)
  - **Rat Squisher**
 	 - Literally the best part of the mod.
  - **Charting**
