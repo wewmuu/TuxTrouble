@@ -40,8 +40,6 @@ If you're looking for documentation, changelogs, or guides, you can find those o
 	 - Duet versions of main week songs.
  - **New Stages**
 	 - Pretty much every song is on it's own stage (some stages are slight variations on others though).
- - **Better-looking Freeplay**
-	 - We are proud of this mod and of it's fanart, so we have a in-game gallery (that totally wasn't done a day before the mod came out) that showcases development images and other neat things.
  - **Unlockables**
 	 - They're a secret, but just know that they aren't that major besides one and that there are a total of 3 unlockables that arent trophies.
 	 - You can get trophies simply by playing the mod. At least one should be fairy obvious as to what it is and how to get it.
