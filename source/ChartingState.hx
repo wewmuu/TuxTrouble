@@ -125,6 +125,13 @@ class ChartingState extends MusicBeatState
 			};
 		}
 
+		curSong = _song.song;
+
+		if (curSong == 'Sus')
+		{
+			PlayState.storyWeek = 2;
+		}
+
 		gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 8, GRID_SIZE * 16);
 		add(gridBG);
 
