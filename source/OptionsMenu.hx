@@ -63,6 +63,7 @@ class OptionsMenu extends MusicBeatState
 			new ReplayOption("View replays"),
 			#end
 			new FlashingLightsOption("Toggle flashing lights that can cause epileptic seizures and strain."),
+			new DaemonDrop("Toggle the color light flash even during the drop in Daemon."),
 			new WatermarkOption("Enable and disable all watermarks from kade engine."),
 			new BotPlay("Showcase your charts and mods with autoplay."),
 			new ScoreScreen("Show the score screen after the end of a song")
