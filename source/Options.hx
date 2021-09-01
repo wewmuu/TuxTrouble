@@ -803,7 +803,7 @@ class DaemonDrop extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Daemon Drop Flashing " + (FlxG.save.data.daemonDropToggle ? "on " : "off");
+		return "Daemon Drop Flashing " + (FlxG.save.data.daemonDropToggle ? "on" : "off");
 	}
 }
 

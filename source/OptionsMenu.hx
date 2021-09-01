@@ -104,6 +104,12 @@ class OptionsMenu extends MusicBeatState
 	var blackBorder:FlxSprite;
 	override function create()
 	{
+
+		#if windows
+		// Updating Discord Rich Presence
+		DiscordClient.changePresence("In the Options Menu", null);
+		#end
+
 		instance = this;
 		//var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image("menuDesat"));
 		var menuBG:FlxSprite = new TrollBG(0, 0).loadGraphic(Paths.image("peDesat"));
@@ -242,10 +248,6 @@ class OptionsMenu extends MusicBeatState
 					else if (FlxG.keys.justPressed.LEFT)
 						FlxG.save.data.offset -= 0.1;
 				}
-				else if (FlxG.keys.pressed.RIGHT)
-					FlxG.save.data.offset += 0.1;
-				else if (FlxG.keys.pressed.LEFT)
-					FlxG.save.data.offset -= 0.1;
 
 				versionShit.text = "Offset (SHIFT + Left, SHIFT + Right): " + HelperFunctions.truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription;
 			}
