@@ -3,4 +3,4 @@
 - Added toggle for Daemon flashing
 - Game now properly remembers set difficulty on exit
 - Discord RPC should no longer linger on exit, backported fix from 1.7
-- We couldn't fix this version of kade and REALLY don't want to spend time porting to another version :(
+- We couldn't fix this version of kade...
