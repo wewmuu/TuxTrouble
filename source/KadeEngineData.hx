@@ -133,6 +133,9 @@ class KadeEngineData
     if (FlxG.save.data.seenUnlockMessage == null)
       FlxG.save.data.seenUnlockMessage = false;
 
+    if (FlxG.save.data.daemonDropToggle == null) // toggle the daemon drop event
+      FlxG.save.data.daemonDropToggle = true;
+
     #if (windows && !NODISCORD && !DEMOBUILD)
     if (FlxG.save.data.discordRP == null) // Discord Rich Presence toggle
       FlxG.save.data.discordRP = true;

@@ -5575,13 +5575,13 @@ class PlayState extends MusicBeatState
 			eventFinished = true;
 		}
 
-		if ((curSong.toLowerCase() == 'daemon' || curSong.toLowerCase() == 'daemon (duet)') && curBeat == 72 && !eventFinished)
+		if ((curSong.toLowerCase() == 'daemon' || curSong.toLowerCase() == 'daemon (duet)') && curBeat == 72 && !eventFinished && FlxG.save.data.daemonDropToggle)
 		{
 			partyLightFlash.color = 0xA96FFF;
 			add(partyLightFlash);
 		}
 
-		if ((curSong.toLowerCase() == 'daemon' || curSong.toLowerCase() == 'daemon (duet)') && curBeat >= 73 && curBeat <= 137 && !eventFinished)
+		if ((curSong.toLowerCase() == 'daemon' || curSong.toLowerCase() == 'daemon (duet)') && curBeat >= 73 && curBeat <= 137 && !eventFinished && FlxG.save.data.daemonDropToggle)
 		{
 
 			switch (partyLightFlash.color)
@@ -5598,9 +5598,13 @@ class PlayState extends MusicBeatState
 
 		}
 
-		if ((curSong.toLowerCase() == 'daemon' || curSong.toLowerCase() == 'daemon (duet)') && curBeat == 137 && !eventFinished)
+		if ((curSong.toLowerCase() == 'daemon' || curSong.toLowerCase() == 'daemon (duet)') && curBeat == 137 && !eventFinished && FlxG.save.data.daemonDropToggle)
 		{
 			remove(partyLightFlash);
+			eventFinished = true;
+		}
+		else if ((curSong.toLowerCase() == 'daemon' || curSong.toLowerCase() == 'daemon (duet)') && curBeat == 137 && !eventFinished && !FlxG.save.data.daemonDropToggle)
+		{
 			eventFinished = true;
 		}
 

@@ -60,8 +60,8 @@ class MainMenuState extends MusicBeatState
 
 	//public static var tuxTroubleVer:String = '1.5';
 
-	public static var tuxTroubleVer:String = '2.1';
-	public static var tuxTroubleVerNum:Float = 2.1;
+	public static var tuxTroubleVer:String = '2.2';
+	public static var tuxTroubleVerNum:Float = 2.2;
 	public static var tuxTroubleVerTag:String = '';
 
 	//public static var tuxTroubleVer:String = '2.0';

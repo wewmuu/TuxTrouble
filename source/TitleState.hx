@@ -168,8 +168,8 @@ class TitleState extends MusicBeatState
 			DiscordClient.initialize();
 
 			Application.current.onExit.add (function (exitCode) {
-				DiscordClient.shutdown();
 				FlxG.save.data.persistDiff = ModGlobals.currentDifficulty;
+				FlxG.save.flush();
 			 });
 		}
 

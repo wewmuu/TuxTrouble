@@ -26,12 +26,15 @@ class LoadReplayState extends MusicBeatState
 	var controlsStrings:Array<String> = [];
     var actualNames:Array<String> = [];
 
-	private var grpControls:FlxTypedGroup<Alphabet>;
+	//private var grpControls:FlxTypedGroup<Alphabet>;
+	private var grpControls:FlxTypedGroup<ManiaMenuItem>;
 	var versionShit:FlxText;
 	var poggerDetails:FlxText;
 	override function create()
 	{
-		var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		//var menuBG:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		var menuBG:TrollBG = new TrollBG(0, 0);
+		menuBG.loadGraphic(Paths.image('peDesat'));
         #if sys
 		controlsStrings = sys.FileSystem.readDirectory(Sys.getCwd() + "/assets/replays/");
         #end
@@ -65,17 +68,19 @@ class LoadReplayState extends MusicBeatState
 		menuBG.color = 0xFFea71fd;
 		menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
 		menuBG.updateHitbox();
-		menuBG.screenCenter();
+		//menuBG.screenCenter();
 		menuBG.antialiasing = true;
 		add(menuBG);
 
-		grpControls = new FlxTypedGroup<Alphabet>();
+		//grpControls = new FlxTypedGroup<Alphabet>();
+		grpControls = new FlxTypedGroup<ManiaMenuItem>();
 		add(grpControls);
 
 		for (i in 0...controlsStrings.length)
 		{
-				var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, controlsStrings[i], true, false);
-				controlLabel.isMenuItem = true;
+				//var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, controlsStrings[i], true, false);
+				var controlLabel:ManiaMenuItem = new ManiaMenuItem(0, (70 * i) + 30, controlsStrings[i]);
+				//controlLabel.isMenuItem = true;
 				controlLabel.targetY = i;
 				grpControls.add(controlLabel);
 			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!

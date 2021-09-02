@@ -783,6 +783,30 @@ class SaveEraseDummyOption extends Option
 	}
 }
 
+// We figured that the menu flash is way worse than this and that people would not care.
+// welp, here we are.The main menu seems way worse than the daemon flash, but idk I'm not epileptic so here I guess.
+// I knew this shit would happen, should have trusted my insticts and added a toggle before release.
+class DaemonDrop extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.daemonDropToggle = !FlxG.save.data.daemonDropToggle;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Daemon Drop Flashing " + (FlxG.save.data.daemonDropToggle ? "on" : "off");
+	}
+}
+
 // TODO: USE LARP USELESS FANCYRURL FUNCTION INSTEAD FOR CONSISTENCY WITH KADE ENGINE
 
 class DonateItchOption extends Option

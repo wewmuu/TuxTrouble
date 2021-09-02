@@ -110,7 +110,7 @@ class GallerySubState extends MusicBeatSubstate
 		var horizontal:Bool = (huh == 4 || huh == -4);
 
 		if (GalleryState.instance.curSelected < 0 && horizontal && prevSelected == 0)
-			GalleryState.instance.curSelected = GalleryState.instance.itemList.length - 3; // hardcoded. we con't have much time, and I need a working menu :(
+			GalleryState.instance.curSelected = GalleryState.instance.itemList.length - 4; // hardcoded. we con't have much time, and I need a working menu :(
 		else if (GalleryState.instance.curSelected < 0 && horizontal && prevSelected == 3)
 			GalleryState.instance.curSelected = GalleryState.instance.itemList.length - 1; // hardcoded. we con't have much time, and I need a working menu :(
 		else if (GalleryState.instance.curSelected < 0 && horizontal && prevSelected == 1)

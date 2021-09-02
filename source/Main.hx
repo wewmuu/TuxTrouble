@@ -7,6 +7,7 @@ import webm.WebmPlayer;
 import openfl.display.BlendMode;
 import openfl.text.TextFormat;
 import openfl.display.Application;
+import lime.app.Application in LimeApplication; // not sure if removing import openfl.display.Application; is bad so let's just do this
 import flixel.util.FlxColor;
 import flixel.FlxG;
 import flixel.FlxGame;
@@ -16,6 +17,10 @@ import openfl.Lib;
 import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
+
+#if windows
+import Discord.DiscordClient;
+#end
 
 class Main extends Sprite
 {
@@ -89,6 +94,12 @@ class Main extends Sprite
 		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
 
 		addChild(game);
+
+		#if windows
+		LimeApplication.current.onExit.add (function (exitCode) {
+			DiscordClient.shutdown();
+		 });
+		#end
 
 
 		FlxG.fixedTimestep = false; // HTML5 go brrrrr (fixedTimestep my ass. Supposedly this shit causes the slowdown on HTML5.) If I'm lucky, this should also fix the bullshit slowdown on some linux distros.
