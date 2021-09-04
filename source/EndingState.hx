@@ -10,6 +10,8 @@ import flixel.util.FlxTimer;
 import Discord.DiscordClient;
 #end
 
+using Lambda; // SHOOT YOURSLEF, HAXE DEVELOPERS
+
 /**
  * ...
  */
@@ -170,7 +172,7 @@ class EndingState extends MusicBeatState
           if (PlayState.storyDifficulty >= FlxG.save.data.weekClearDifficultyTUX)
             FlxG.save.data.weekClearDifficultyTUX = PlayState.storyDifficulty;
 
-          if (!FlxG.save.data.ratsUnlocked.contains('beastie/'))
+          if (!Lambda.has(FlxG.save.data.ratsUnlocked, 'beastie/')) // USE LAMBDA INSTEAD OF COBTAINS BECAUSE HAXE IS STUPID AND DIDN'T SAY THAT CONTAINS DOESN'T WORK ON JS
             FlxG.save.data.ratsUnlocked.push('beastie/');
 
         case true:
@@ -180,7 +182,7 @@ class EndingState extends MusicBeatState
           if (PlayState.storyDifficulty >= FlxG.save.data.weekClearDifficultyNIITE)
             FlxG.save.data.weekClearDifficultyNIITE = PlayState.storyDifficulty;
 
-          if (!FlxG.save.data.ratsUnlocked.contains('freestyle/'))
+          if (!Lambda.has(FlxG.save.data.ratsUnlocked, 'freestyle/')) // I'M SO FUCKING ANGRY AT KADE AND HAXE. LET ME NEVER USE OR WORK ON/WITH THIS HORRIBLE SHIT CODE EVER AGAIN. FUCK.
             FlxG.save.data.ratsUnlocked.push('freestyle/');
 
       }
