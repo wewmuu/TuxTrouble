@@ -94,7 +94,12 @@ class TitleState extends MusicBeatState
 		trace('NEWGROUNDS LOL');
 		#end
 
+		#if (web && USEGAMEJOLT)
+		FlxG.save.bind('tuxtrouble', 'wewmu'); // use a seperate save token for gamejolt to not cause conflict with other mods
+		trace('Using gamejolt savebind!');
+		#else
 		FlxG.save.bind('funkin', 'ninjamuffin99');
+		#end
 
 		KadeEngineData.initSave();
 
@@ -157,6 +162,10 @@ class TitleState extends MusicBeatState
 			FlxG.save.data.tuxTroubleVerTag = MainMenuState.tuxTroubleVerTag; // set mod version (string tag can be null)
 
 		}
+
+		#if (web && USEGAMEJOLT)
+		GamejoltApi.gameJoltInit();
+		#end
 
 
 		// I moved this discord stuff to right before the intro so the save data

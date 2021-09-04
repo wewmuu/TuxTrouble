@@ -104,6 +104,11 @@ class MainMenuState extends MusicBeatState
 	var ratTrophy:FlxSprite;
 	var ratTrophyConditionMet:Bool = false;
 
+	#if (web && USEGAMEJOLT)
+	// To help not spam gamejolt with requests
+	public static var checkGamejolt:Bool = true;
+	#end
+
 	override function create()
 	{
 
@@ -189,6 +194,10 @@ class MainMenuState extends MusicBeatState
 		add(menuHeader);
 
 		trophySetup();
+
+		#if (web && USEGAMEJOLT)
+		checkGamejolt = false;
+		#end
 
 		trophyShelf = new FlxSprite(-13, menuArt.y + menuArt.height + 5).loadGraphic(Paths.image('tuxMenu/trophies/shelf'));
 		trophyShelf.antialiasing = true;
@@ -526,11 +535,17 @@ class MainMenuState extends MusicBeatState
 		{
 			case 'storymode':
 				//FlxG.switchState(new StoryMenuState());
+				#if (web && USEGAMEJOLT)
+				checkGamejolt = true;
+				#end
 				diffSelectMod = 0;
 				FlxG.switchState(new DiffSelectState());
 				trace("Story Menu Selected");
 
 			case 'freeplay' | 'duetplay':
+				#if (web && USEGAMEJOLT)
+				checkGamejolt = true;
+				#end
 				FlxG.switchState(new FreeplayState());
 
 				trace("Freeplay Menu Selected");
@@ -549,6 +564,9 @@ class MainMenuState extends MusicBeatState
 				//loadFreeplaySong('Smooth', 2);
 
 			case 'true trolling':
+				#if (web && USEGAMEJOLT)
+				checkGamejolt = true;
+				#end
 				diffSelectMod = 2;
 				FlxG.switchState(new DiffSelectState());
 				//loadFreeplaySong('True Trolling', 2);
@@ -785,6 +803,24 @@ class MainMenuState extends MusicBeatState
 					storyTrophyImage = 'storyHard';
 			}
 
+			#if (web && USEGAMEJOLT)
+			if (FlxG.save.data.weekClearTUX && FlxG.save.data.weekClearDifficultyTUX >= 0 && GamejoltApi.isInitialized() && checkGamejolt)
+				GamejoltApi.fetchTrophy(147709, function(ReturnMap:Map<String, String>){
+					if(ReturnMap['achieved'] == 'false')
+						GamejoltApi.addTrophy(147709);
+				});
+			if (FlxG.save.data.weekClearTUX && FlxG.save.data.weekClearDifficultyTUX >= 1 && GamejoltApi.isInitialized() && checkGamejolt)
+				GamejoltApi.fetchTrophy(147710, function(ReturnMap:Map<String, String>){
+					if(ReturnMap['achieved'] == 'false')
+						GamejoltApi.addTrophy(147710);
+				});
+			if (FlxG.save.data.weekClearTUX && FlxG.save.data.weekClearDifficultyTUX == 2 && GamejoltApi.isInitialized() && checkGamejolt)
+				GamejoltApi.fetchTrophy(147711, function(ReturnMap:Map<String, String>){
+					if(ReturnMap['achieved'] == 'false')
+						GamejoltApi.addTrophy(147711);
+				});
+			#end
+
 		}
 
 		// freestyle
@@ -802,6 +838,24 @@ class MainMenuState extends MusicBeatState
 					freestyleTrophyImage = 'FreestyleTrophyHard';
 			}
 
+			#if (web && USEGAMEJOLT)
+			if (FlxG.save.data.weekClearTUX && FlxG.save.data.weekClearDifficultyTUX >= 0 && GamejoltApi.isInitialized() && checkGamejolt)
+				GamejoltApi.fetchTrophy(147712, function(ReturnMap:Map<String, String>){
+					if(ReturnMap['achieved'] == 'false')
+						GamejoltApi.addTrophy(147712);
+				});
+			if (FlxG.save.data.weekClearTUX && FlxG.save.data.weekClearDifficultyTUX >= 1 && GamejoltApi.isInitialized() && checkGamejolt)
+				GamejoltApi.fetchTrophy(147713, function(ReturnMap:Map<String, String>){
+					if(ReturnMap['achieved'] == 'false')
+						GamejoltApi.addTrophy(147713);
+				});
+			if (FlxG.save.data.weekClearTUX && FlxG.save.data.weekClearDifficultyTUX == 2 && GamejoltApi.isInitialized() && checkGamejolt)
+				GamejoltApi.fetchTrophy(147714, function(ReturnMap:Map<String, String>){
+					if(ReturnMap['achieved'] == 'false')
+						GamejoltApi.addTrophy(147714);
+				});
+			#end
+
 		}
 
 		// true trolling
@@ -815,11 +869,31 @@ class MainMenuState extends MusicBeatState
 			else if (FlxG.save.data.beatTrueTrolling)
 				trollingTrophyImage = 'LENNYTROPHY';
 
+			#if (web && USEGAMEJOLT)
+			if (FlxG.save.data.beatTrueTrollingDuet && GamejoltApi.isInitialized() && checkGamejolt)
+				GamejoltApi.fetchTrophy(147717, function(ReturnMap:Map<String, String>){
+					if(ReturnMap['achieved'] == 'false')
+						GamejoltApi.addTrophy(147717);
+				});
+			if (FlxG.save.data.beatTrueTrolling && GamejoltApi.isInitialized() && checkGamejolt)
+				GamejoltApi.fetchTrophy(147716, function(ReturnMap:Map<String, String>){
+					if(ReturnMap['achieved'] == 'false')
+						GamejoltApi.addTrophy(147716);
+				});
+			#end
+
 		}
 
 		// rat
 		if (FlxG.save.data.ratsUnlocked.length == 2)
 			ratTrophyConditionMet = true;
+		#if (web && USEGAMEJOLT)
+		if (FlxG.save.data.ratsUnlocked.length == 2 && GamejoltApi.isInitialized() && checkGamejolt)
+			GamejoltApi.fetchTrophy(147718, function(ReturnMap:Map<String, String>){
+				if(ReturnMap['achieved'] == 'false')
+					GamejoltApi.addTrophy(147718);
+			});
+		#end
 
 	}
 
