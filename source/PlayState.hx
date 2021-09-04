@@ -1984,7 +1984,7 @@ class PlayState extends MusicBeatState
 				dad.y += 75;
 				boyfriend.y += 75;
 
-				if (!isStoryMode || (isStoryMode && !FlxG.save.data.dialogueToggle) || (isStoryMode && replayDialougeSkip))
+				if (!isStoryMode || (isStoryMode && !FlxG.save.data.dialogueToggle) || (isStoryMode && replayDialougeSkip)) //.. did I seriously have to forget to fix this in the ONE QOL UPDATE I GOT?! FUCK. It's gonna bother me any time someone records themselves dying on storymode.
 				{
 					camPos.set(770, 450); // weird camera shit
 					fixedCameraPos.set(770, 450); // weird camera shit
