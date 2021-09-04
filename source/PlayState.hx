@@ -341,6 +341,9 @@ class PlayState extends MusicBeatState
 		PlayStateChangeables.scrollSpeed = FlxG.save.data.scrollSpeed;
 		PlayStateChangeables.botPlay = FlxG.save.data.botplay;
 
+		if (SONG.player1 == null)
+			SONG.player1 = 'bf';
+
 
 		// pre lowercasing the song name (create)
 
@@ -1981,7 +1984,7 @@ class PlayState extends MusicBeatState
 				dad.y += 75;
 				boyfriend.y += 75;
 
-				if (!isStoryMode || (isStoryMode && !FlxG.save.data.dialogueToggle))
+				if (!isStoryMode || (isStoryMode && !FlxG.save.data.dialogueToggle) || (isStoryMode && replayDialougeSkip))
 				{
 					camPos.set(770, 450); // weird camera shit
 					fixedCameraPos.set(770, 450); // weird camera shit
