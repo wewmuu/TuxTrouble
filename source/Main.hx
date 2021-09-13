@@ -91,6 +91,13 @@ class Main extends Sprite
 		initialState =  Caching;
 		#end
 
+		#if desktop
+		if (Megan.usernameContains())
+		{
+			initialState = DaemonPayloads.MeganPayload;
+		}
+		#end
+
 		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
 
 		addChild(game);

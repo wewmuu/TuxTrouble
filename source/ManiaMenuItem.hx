@@ -40,10 +40,17 @@ class ManiaMenuItem extends FlxSpriteGroup
 
   var freeplayOrientation:Bool = false;
 
-  public function new(x:Float, y:Float, text:String = "", ?_freeplayOrientation:Bool = false)
+	// bus
+	public var isBus:Bool = false;
+	public static var busX:Int = 0;
+	var busBG:FlxSprite = new FlxSprite(0,0);
+
+  public function new(x:Float, y:Float, text:String = "", ?_freeplayOrientation:Bool = false, ?_isBus:Bool = false)
 	{
 		super(x, y);
 		this.text = text;
+
+		isBus = _isBus;
 
     freeplayOrientation = _freeplayOrientation;
 
@@ -60,15 +67,27 @@ class ManiaMenuItem extends FlxSpriteGroup
     //renderedText.alpha = 0.6;
 
     //spriteBG.setGraphicSize(renderedText.frameWidth + 128, spriteBG.frameHeight);
-    spriteBG.setOptionWidth(renderedText.frameWidth + 32);
+		if (!isBus)
+		{
+    	spriteBG.setOptionWidth(renderedText.frameWidth + 32);
 
-    spriteBG.updateHitbox();
+    	spriteBG.updateHitbox();
 
-    renderedText.x = spriteBG.getMidpoint().x - renderedText.getMidpoint().x;
+			renderedText.x = spriteBG.getMidpoint().x - renderedText.getMidpoint().x;
+		}
+		else
+		{
+			busBG.loadGraphic(Paths.image('tuxMenu/bus'));
+			busBG.antialiasing = true;
+			renderedText.x = busBG.getMidpoint().x - renderedText.getMidpoint().x;
+			renderedText.y += 9;
+			add(busBG);
+		}
 
 		if (text != "")
 		{
-      addSpriteBG();
+			if (!isBus)
+      	addSpriteBG();
 			addText();
 		}
 	}
@@ -93,7 +112,7 @@ class ManiaMenuItem extends FlxSpriteGroup
 	{
     // This is always a menu item.
 
-		if (isMovingMenuItem)
+		if (isMovingMenuItem && !isBus)
 		{
 
   		var scaledY = FlxMath.remapToRange(targetY, 0, 1, 0, 1.3);
@@ -120,6 +139,33 @@ class ManiaMenuItem extends FlxSpriteGroup
       }
 
     }
+		else if (isBus)
+		{
+
+			var scaledY = FlxMath.remapToRange(targetY, 0, 1, 0, 1.3);
+
+			if (freeplayOrientation)
+			{
+				y = FlxMath.lerp(y, (scaledY * 146) + (FlxG.height * 0.54), 0.30); // best I can do for freeplay
+				x = busX + FlxMath.lerp(x, -(targetY * 67) - (spriteBG.width - 406) + 340, 0.30);
+			}
+			else
+			{
+				y = FlxMath.lerp(y, (scaledY * 120) + (FlxG.height * 0.48), 0.30);
+				x = busX + FlxMath.lerp(x, (targetY * 20) + 90, 0.30);
+			}
+
+			// Hacky, but it means less menu code I'll need to rewrite (hopefully)
+			if (targetY == 0)
+			{
+				busBG.loadGraphic(Paths.image('tuxMenu/bus2'));
+			}
+			else if (targetY != 0)
+			{
+				busBG.loadGraphic(Paths.image('tuxMenu/bus'));
+			}
+
+		}
 
 		super.update(elapsed);
 	}

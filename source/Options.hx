@@ -988,3 +988,26 @@ class DiscordRP_Option extends Option
 }
 
 #end
+
+
+// BUS
+class BusOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.sound.play(Paths.sound('beep'));
+		display = updateDisplay();
+		return false;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "CRAZYBUS";
+	}
+}

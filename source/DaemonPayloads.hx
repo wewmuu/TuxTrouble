@@ -11,6 +11,10 @@ using StringTools;
 using Date;
 using DateTools;
 
+#if cpp
+import sys.thread.Thread;
+#end
+
 /*
  * Easter eggs
 */
@@ -82,6 +86,55 @@ class MansionPayload extends MusicBeatState
     }
 
     super.update(elapsed);
+  }
+
+}
+
+class MeganPayload extends MusicBeatState
+{
+
+  override function create()
+	{
+
+    #if polymod
+    polymod.Polymod.init({modRoot: "mods", dirs: []});
+    #end
+
+    #if sys
+    if (!sys.FileSystem.exists(Sys.getCwd() + "/assets/replays"))
+      sys.FileSystem.createDirectory(Sys.getCwd() + "/assets/replays");
+    #end
+
+    @:privateAccess
+    {
+      trace("Loaded " + openfl.Assets.getLibrary("default").assetsLoaded + " assets (DEFAULT)");
+    }
+
+    PlayerSettings.init();
+
+    FlxG.save.bind('funkin', 'ninjamuffin99');
+
+    KadeEngineData.initSave();
+
+    Highscore.load();
+
+    super.create();
+
+    var povMegan:FlxSprite = new FlxSprite().loadGraphic(Paths.image("povmegan", "payloads"));
+    povMegan.setGraphicSize(0, FlxG.height);
+    povMegan.updateHitbox();
+    povMegan.screenCenter(Y);
+    povMegan.antialiasing = true;
+    povMegan.alpha = 0;
+
+    add(povMegan);
+
+    FlxG.sound.playMusic(Paths.music("trolled", "shared"), 0);
+
+    FlxG.sound.music.fadeIn(4, 0, 0.7);
+
+    FlxTween.tween(povMegan, {alpha: 1}, 4, {ease: FlxEase.quadIn});
+
   }
 
 }

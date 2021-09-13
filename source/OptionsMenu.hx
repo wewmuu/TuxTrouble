@@ -14,6 +14,7 @@ import flixel.input.keyboard.FlxKey;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
+import flixel.system.FlxSound;
 import lime.utils.Assets;
 
 #if windows
@@ -26,6 +27,9 @@ class OptionsMenu extends MusicBeatState
 
 	var selector:FlxText;
 	var curSelected:Int = 0;
+
+	var busSound:FlxSound;
+	var busScore:Int = 0;
 
 	var options:Array<OptionCategory> = [
 		new OptionCategory("Gameplay", [
@@ -40,7 +44,8 @@ class OptionsMenu extends MusicBeatState
 			new AccuracyDOption("Change how accuracy is calculated. (Accurate = Simple, Complex = Milisecond Based)"),
 			new ResetButtonOption("Toggle pressing R to gameover."),
 			// new OffsetMenu("Get a note offset based off of your inputs!"),
-			new CustomizeGameplay("Drag'n'Drop Gameplay Modules around to your preference")
+			new CustomizeGameplay("Drag'n'Drop Gameplay Modules around to your preference"),
+			new BusOption("\"GAMEPLAY\"")
 		]),
 		new OptionCategory("Appearance", [
 			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
@@ -152,6 +157,8 @@ class OptionsMenu extends MusicBeatState
 		FlxTween.tween(versionShit,{y: FlxG.height - 18},2,{ease: FlxEase.elasticInOut});
 		FlxTween.tween(blackBorder,{y: FlxG.height - 18},2, {ease: FlxEase.elasticInOut});
 
+		busSound = FlxG.sound.play(Paths.sound('engine'), 0, true);
+
 		super.create();
 	}
 
@@ -164,8 +171,11 @@ class OptionsMenu extends MusicBeatState
 
 		if (acceptInput)
 		{
+
 			if (controls.BACK && !isCat)
 			{
+
+				busSound.volume = 0;
 
 				if (FlxG.random.bool(1))
 					FlxG.sound.play(Paths.sound('cancelMenuAlt'));
@@ -176,6 +186,8 @@ class OptionsMenu extends MusicBeatState
 			}
 			else if (controls.BACK)
 			{
+
+				busSound.volume = 0;
 
 				if (FlxG.random.bool(1))
 					FlxG.sound.play(Paths.sound('cancelMenuAlt'));
@@ -224,6 +236,12 @@ class OptionsMenu extends MusicBeatState
 				}
 				else
 				{
+
+					if (currentSelectedCat.getOptions()[curSelected].getDisplay() == "CRAZYBUS")
+						busSound.volume = 1;
+					else
+						busSound.volume = 0;
+
 					if (FlxG.keys.pressed.SHIFT)
 					{
 						if (FlxG.keys.justPressed.RIGHT)
@@ -231,10 +249,36 @@ class OptionsMenu extends MusicBeatState
 						else if (FlxG.keys.justPressed.LEFT)
 							FlxG.save.data.offset -= 0.1;
 					}
+					else if (currentSelectedCat.getOptions()[curSelected].getDisplay() == "CRAZYBUS")
+					{
+						if (FlxG.keys.pressed.RIGHT)
+						{
+							ManiaMenuItem.busX += 1;
+							busScore += 1;
+						}
+						if (FlxG.keys.pressed.LEFT)
+						{
+							ManiaMenuItem.busX -= 1;
+							busScore -= 1;
+						}
+						if (ManiaMenuItem.busX > 200)
+							ManiaMenuItem.busX = 0;
+						if (ManiaMenuItem.busX < 0)
+							ManiaMenuItem.busX = 200;
+						if (busScore > 65535)
+							busScore = 0;
+						if (busScore < 0)
+							busScore = 65535;
+					}
 
-					versionShit.text = "Offset (SHIFT + Left, SHIFT + Right): " + HelperFunctions.truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription;
+					if (currentSelectedCat.getOptions()[curSelected].getDisplay() != "CRAZYBUS")
+						versionShit.text = "Offset (SHIFT + Left, SHIFT + Right): " + HelperFunctions.truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription;
+					else
+						versionShit.text = "||CRAZYBUS||  SCORE: " + busScore;
 				}
-				if (currentSelectedCat.getOptions()[curSelected].getAccept())
+				if (currentSelectedCat.getOptions()[curSelected].getDisplay() == "CRAZYBUS")
+					versionShit.text = "||CRAZYBUS||  SCORE: " + busScore;
+				else if (currentSelectedCat.getOptions()[curSelected].getAccept())
 					versionShit.text =  currentSelectedCat.getOptions()[curSelected].getValue() + " - Description - " + currentDescription;
 				else
 					versionShit.text = "Offset (SHIFT + Left, SHIFT + Right): " + HelperFunctions.truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription;
@@ -247,7 +291,7 @@ class OptionsMenu extends MusicBeatState
 						FlxG.save.data.offset += 0.1;
 					else if (FlxG.keys.justPressed.LEFT)
 						FlxG.save.data.offset -= 0.1;
-				}
+			}
 
 				versionShit.text = "Offset (SHIFT + Left, SHIFT + Right): " + HelperFunctions.truncateFloat(FlxG.save.data.offset,2) + " - Description - " + currentDescription;
 			}
@@ -263,7 +307,7 @@ class OptionsMenu extends MusicBeatState
 					if (currentSelectedCat.getOptions()[curSelected].press()) {
 						grpControls.remove(grpControls.members[curSelected]);
 						//var ctrl:Alphabet = new Alphabet(0, (70 * curSelected) + 30, currentSelectedCat.getOptions()[curSelected].getDisplay(), true, false);
-						var ctrl:ManiaMenuItem = new ManiaMenuItem(0, (70 * curSelected) + 30, currentSelectedCat.getOptions()[curSelected].getDisplay());
+						var ctrl:ManiaMenuItem = new ManiaMenuItem(0, (70 * curSelected) + 30, currentSelectedCat.getOptions()[curSelected].getDisplay(), false, (currentSelectedCat.getOptions()[curSelected].getDisplay() == "CRAZYBUS"));
 						//ctrl.isMenuItem = true;
 						grpControls.add(ctrl);
 					}
@@ -276,7 +320,7 @@ class OptionsMenu extends MusicBeatState
 					for (i in 0...currentSelectedCat.getOptions().length)
 					{
 						//var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, currentSelectedCat.getOptions()[i].getDisplay(), true, false);
-						var controlLabel:ManiaMenuItem = new ManiaMenuItem(0, (70 * i) + 30, currentSelectedCat.getOptions()[i].getDisplay());
+						var controlLabel:ManiaMenuItem = new ManiaMenuItem(0, (70 * i) + 30, currentSelectedCat.getOptions()[i].getDisplay(), false, (currentSelectedCat.getOptions()[i].getDisplay() == "CRAZYBUS"));
 						//controlLabel.isMenuItem = true;
 						controlLabel.targetY = i;
 						grpControls.add(controlLabel);
