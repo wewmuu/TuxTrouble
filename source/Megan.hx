@@ -25,7 +25,7 @@ class Megan extends MusicBeatState
 	public static function usernameContains():Bool
 	{
 		#if desktop
-		if (StringTools.contains(getUsername(), "shekelstien") || StringTools.contains(getUsername(), "meganshekelstien") || StringTools.contains(getUsername(), "povmegan" || StringTools.contains(getUsername(), "megatron"))
+		if (StringTools.contains(getUsername(), "shekelstien") || StringTools.contains(getUsername(), "meganshekelstien") || StringTools.contains(getUsername(), "povmegan") || StringTools.contains(getUsername(), "megatron"))
 			return true;
 		#end
     return false;
