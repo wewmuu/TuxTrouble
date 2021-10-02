@@ -29,7 +29,7 @@ class OptionsMenu extends MusicBeatState
 	var curSelected:Int = 0;
 
 	var busSound:FlxSound;
-	var busScore:Int = 0;
+	static var busScore:Int = 0;
 
 	var options:Array<OptionCategory> = [
 		new OptionCategory("Gameplay", [
