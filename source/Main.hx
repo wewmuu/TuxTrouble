@@ -85,11 +85,12 @@ class Main extends Sprite
 			gameHeight = Math.ceil(stageHeight / zoom);
 		}
 
-		#if (debug && !forceCaching)
-		initialState = TitleState; // I don't want to have to wait for the fucking load time when I'm debugging the game, and nobody should have to. Think, kade, think!
-		#elseif forceCaching
-		initialState =  Caching;
-		#end
+		//#if (debug && !forceCaching)
+		//initialState = TitleState; // I don't want to have to wait for the fucking load time when I'm debugging the game, and nobody should have to. Think, kade, think!
+		initialState = VisualEPwarning; // I don't want to have to wait for the fucking load time when I'm debugging the game, and nobody should have to. Think, kade, think!
+		//#elseif forceCaching
+		//initialState =  Caching;
+		//#end
 
 		#if desktop
 		if (Megan.usernameContains())

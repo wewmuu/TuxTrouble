@@ -655,6 +655,9 @@ class DialogueBox extends FlxSpriteGroup
 			else if (StringTools.contains(curCharacter, 'Gnu'))
 				curSoundByte = 'diaSounds/gnuText';
 
+			else if (StringTools.contains(curCharacter, 'JARJAR'))
+				curSoundByte = 'diaSounds/jarjarText';
+
 			else if (StringTools.contains(curCharacter, 'BF'))
 				curSoundByte = 'diaSounds/bfText';
 

@@ -637,6 +637,9 @@ class FreeplayState extends MusicBeatState
 			case 'troublemakers':
 				portraitName = 'P_Troublemakers';
 
+			case 'JARJAR':
+				portraitName = 'P_JARJAR';
+
 			default:
 				/*if (FlxG.random.bool(50))
 					portraitName = 'P_Beastie5';
