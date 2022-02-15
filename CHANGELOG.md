@@ -5,6 +5,8 @@ All notable changes will be documented in this file.
 - NOTE: THIS IS AN UNOFFICAL RELEASE. SHHHH.
 - THIS IS NOT A CONTENT UPDATE.
 
+- This released a day late. There exists an easter egg for Valentines day in the code.
+
 - Added visual epilepsy warning.
 - Restored Discord integration.
 - Added new half-assed valentines themed rat.
