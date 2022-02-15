@@ -1,5 +1,7 @@
 2.3;
-- Fixed Discord integration.
-- Added new half-assed rat.
 - Added visual epilepsy warning.
+- Fixed Discord integration.
+- Added new half-assed valentines themed rat.
+- Implemented easter eggs that didn't make release.
+- Fixed bugs, including one that made HTML5 builds unbeatable.
 - Download ONLY on GitHub.
