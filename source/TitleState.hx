@@ -402,7 +402,7 @@ class TitleState extends MusicBeatState
 			{
 				// Get current version of Tux Trouble
 
-				var http = new haxe.Http("https://raw.githubusercontent.com/wewmuu/TuxTrouble/feb/version.downloadMe");
+				var http = new haxe.Http("https://raw.githubusercontent.com/wewmuu/TuxTrouble/main/version.downloadMe");
 				var returnedData:Array<String> = [];
 
 				http.onData = function (data:String)
