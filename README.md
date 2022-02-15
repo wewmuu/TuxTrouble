@@ -6,7 +6,10 @@
 **Friday Night Funkin'** is a rhythm game originally made for Ludum Dare 47 "Stuck In a Loop".
 
 Links: **[itch.io page](https://ninja-muffin24.itch.io/funkin) ⋅ [Newgrounds](https://www.newgrounds.com/portal/view/770371) ⋅ [source code on GitHub](https://github.com/ninjamuffin99/Funkin)**
-> Uh oh! Your tryin to kiss ur hot girlfriend, but her MEAN and EVIL dad is trying to KILL you! He's an ex-rockstar, the only way to get to his heart? The power of music... 
+> Uh oh! Your tryin to kiss ur hot girlfriend, but her MEAN and EVIL dad is trying to KILL you! He's an ex-rockstar, the only way to get to his heart? The power of music...
+
+# DOWNLOADING
+This mod can be downloaded from the releases tab in the sidebar on GitHub. (To your right!)
 
 ## Kade Engine 1.5.3
 **Kade Engine** is a mod for Friday Night Funkin', including a full engine rework, replays, and more.
