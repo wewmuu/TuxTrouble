@@ -1,6 +1,17 @@
 # Changelog
 All notable changes will be documented in this file.
 
+## 2.3
+- NOTE: THIS IS AN UNOFFICAL RELEASE. SHHHH.
+- THIS IS NOT A CONTENT UPDATE.
+
+- Added visual epilepsy warning.
+- Restored Discord integration.
+- Added new half-assed valentines themed rat.
+- Implemented easter eggs that didn't make release.
+- Fixed bugs, including one that made HTML5 builds unbeatable.
+- Download ONLY on GitHub.
+
 ## 2.2
 - Updated Flame War Hard
 - Added toggle for Daemon flashing
