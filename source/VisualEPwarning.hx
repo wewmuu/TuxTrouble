@@ -112,7 +112,7 @@ class VisualEPwarning extends MusicBeatState
 			else FlxTween.tween(kadeLogo, {alpha: 0.8}, 0.8, {ease: FlxEase.quartInOut});
 		}, 0);
 
-		new FlxTimer().start(3.5, function(tmr:FlxTimer)
+		new FlxTimer().start(5, function(tmr:FlxTimer)
 		{
 			FlxG.switchState(new TitleState());
 		}, 0);
